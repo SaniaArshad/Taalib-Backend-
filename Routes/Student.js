@@ -8,6 +8,8 @@ const Feedback = require('../model/FeedbackModel');
 const Attendance = require('../model/AttendanceModel');
 const stripe = require('stripe')( process.env.STRIPE_SECRET_KEY);
 
+
+
 let auth = (req , res , next)=>{
   let token = req.headers['token'];
   jwt.verify(token , process.env.JWT_SECRET , (err , decoded)=>{
